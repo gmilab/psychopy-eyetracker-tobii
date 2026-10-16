@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     name: Build docs
-    runs-on: macos-11
+    runs-on: windows-latest
 
     steps:
     - name: Checkout
@@ -30,6 +30,8 @@ jobs:
 
     - name: Commit
       run: |
+        git config user.name "psychopy"
+        git config user.email "support@opensciencetools.org"
         git add --all
         git commit --all -m "sys: Build documentation"
     
